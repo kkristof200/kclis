@@ -10,6 +10,6 @@ for cli in "${clis[@]}"; do
     if ! [ -x "$(command -v wget)" ]; then
         curl $github_path > $local_path && chmod u+x $local_path
     else
-        wget $github_path -O $local_path && chmod u+x $local_path
+        wget -O $local_path $github_path && chmod u+x $local_path
     fi
 done
