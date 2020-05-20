@@ -1,0 +1,15 @@
+#!/bin/bash
+
+clis=( "new_pip_package" "pypi_publish" "pip_install_all" "push" "pullall" "update_kclis" )
+
+for cli in "${clis[@]}"; do
+    echo $cli
+    github_path="https://raw.githubusercontent.com/kkristof200/$cli/master/$cli"
+    local_path="/usr/local/bin/$cli"
+
+    if ! [ -x "$(command -v wget)" ]; then
+        curl $github_path > $local_path && chmod u+x $local_path
+    else
+        wget $github_path -O $local_path && chmod u+x $local_path
+    fi
+done
