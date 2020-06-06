@@ -1,6 +1,6 @@
 #!/bin/bash
 
-clis=( "new_pip_package" "pypi_publish" "pip_install_all" "new_python_file" "push" "pullall" "pushall" "status" "syncall" "update_kclis" )
+clis=( "new_pip_package" "pypi_publish" "pip_install_all" "new_python_file" "push" "pullall" "pushall" "status" "syncall" "fetchall" "update_kclis" )
 
 for cli in "${clis[@]}"; do
     echo $cli
